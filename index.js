@@ -4,7 +4,33 @@ const helpModule = require('./Commands/help');
 
 const Discord = require('discord.js');
 const ytdl = require('ytdl-core');
-const client = new Discord.Client();
+const client = new Discord.Client({autoReconnect: true, max_message_cache: 0});
+
+var commands = [
+  {
+    command: "joke",
+    description: "Says a random joke",
+    execute: function(message, params) {
+      message.reply(jokeModule.knock());
+    }
+  },
+
+  {
+    command: "thinking",
+    description: "Posts a random thinking emoji",
+    execute: function(message, params) {
+      message.channel.sendMessage("", {
+        file: thinkModule.thinking()
+      });
+    }
+  },
+
+  {
+    command: "music",
+    description: "Allows user to queue, play, pause, or stop music in their voice channel",
+
+  }
+];
 
 client.on('ready', () => {
   console.log('I am ready!');
@@ -13,7 +39,22 @@ client.on('ready', () => {
 //Turn the discordjs on to listen to a message
     client.on('message', (message) => {
 
+      if (message.channel.type == "dm" && message.author.id != client.user.id) { // If the message sent was a DM and not by the Bot,
+        // to prevent infinite looping
+          message.channel.sendMessage("Please use /help in a public chat room to see a list of commands!");
+      } else if (message.channel.type == "text") { // Message recieved on text channel
+          if (message.isMentioned(client.user)) {
+            message.reply("Hey there! Use /help for a list of commands!");
+          } else {
+            if (message.content.startsWith('-')) {
+                handleCommand(message, message.content.substring(1));
+            }
+          }
+
+      }
+
 //Listens to each instance of the message /knock and executes the code below
+/*
         if (message.content.startsWith('/knock')) {
             const msg = message.content.split(' ');
 
@@ -38,7 +79,10 @@ client.on('ready', () => {
           var stream = ""
           var flag = false
           if (msg.length < 2) {
-            message.reply("You need to add a link bud")
+            message.reply("Please specify what you want to do.\nUse /music <play/stop/skip>\nOr /music <q> <URL>")
+          }
+          if (msg.length == 2) {
+
           }
           else {
             try {
@@ -61,7 +105,26 @@ client.on('ready', () => {
             message.reply('You need to join a voice channel first!');
           }
         }
+        */
+
     });
+
+function handleCommand(message, text) {
+  var params = text.split(" ");
+  var command = searchCommand(params[0]);
+
+  if (command) {
+    command.execute(message, params);
+  }
+}
+
+function searchCommand(commandName) {
+  for (var i = 0; i < commands.length; i++) {
+    if (commands[i].command == commandName.toLowerCase()) {
+      return commands[i];
+    }
+  }
+}
 
 const token = process.env.TOKEN;
 client.login(token);
