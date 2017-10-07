@@ -28,11 +28,11 @@ var commands = [
 
   {
     command: "help",
-    description: "Posts a list of commands"
+    description: "Posts a list of commands",
     execute: function(message, params) {
       message.channel.sendMessage(helpModule.help())
     }
-  }
+  },
 
   {
     command: "music",

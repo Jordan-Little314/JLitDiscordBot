@@ -24,7 +24,6 @@ module.exports = {
 
       }
     }
-  }
 
 module.exports = {
   stop: function(message, params) {
@@ -66,7 +65,7 @@ module.exports = {
 
 function queuePlaylist (playlistId, message, client, pageToken = '') {
     request("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=" + playlistId + "&key=" + yt_api_key + "&pageToken=" + pageToken, (error, response, body) => {
-      var json in JSON.parse(body);
+      var json = JSON.parse(body);
       if ("error" in json) {
         message.reply("An error has occured: " + json.error.errors[0].message + " - " + json.error.errors[0].reason);
       } else if (json.items.length == 0) {
