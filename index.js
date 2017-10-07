@@ -3,6 +3,7 @@ const jokeModule = require('./Commands/joke');
 const helpModule = require('./Commands/help');
 const musicModule = require('./Commands/music');
 
+
 const Discord = require('discord.js');
 const ytdl = require('ytdl-core');
 const client = new Discord.Client({autoReconnect: true, max_message_cache: 0});
@@ -30,7 +31,7 @@ var commands = [
     command: "help",
     description: "Posts a list of commands",
     execute: function(message, params) {
-      message.channel.sendMessage(helpModule.help())
+      message.channel.sendMessage(helpModule.help());
     }
   },
 
@@ -42,14 +43,15 @@ var commands = [
         message.channel.sendMessage("Please add parameters to -music, use -help for info.");
       }
       if (params[1] == "q" || params[1] == "que" || params[1] == "queue") {
-          musicModule.queue(message, params, client);
+          musicModule.queue(message, params, client, ytApiKey);
+          //musicModule.queue(message, params, client);
       } else if (params[1] == "stop") {
         musicModule.stop(message, params);
       } else if (params[1] == "play") {
-        musicModule.play(message, params);
-      } else if (params[1] == "skip") {
-        musicModule.skip(message, params);
-      }
+        musicModule.play(message, params, client);
+      } /*else if (params[1] == "skip") {
+        //musicModule.skip(message, params, client);
+      }*/
     }
 
   }
