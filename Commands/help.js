@@ -10,4 +10,6 @@ var helpText = "```Welcome to the Lit Bot! \n" +
                "-thinking: random thinking emoji \n" +
                "-music <q> <URL>: puts a song in the queue\n" +
                "-music <play/stop>: plays/stops song in queue\n" +
+               "-cat: random cat picture, taken from /r/catpictures" +
+               "-puppy: random puppy picture, taken from /r/puppies" +
                "```"

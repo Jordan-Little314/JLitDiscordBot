@@ -2,6 +2,7 @@ const thinkModule = require('./Commands/thinking');
 const jokeModule = require('./Commands/joke');
 const helpModule = require('./Commands/help');
 const musicModule = require('./Commands/music');
+const redditPicModule = require('./Commands/redditPictures');
 
 
 const Discord = require('discord.js');
@@ -21,7 +22,7 @@ var commands = [
     command: "thinking",
     description: "Posts a random thinking emoji",
     execute: function(message, params) {
-      message.channel.sendMessage("", {
+      message.channel.send("", {
         file: thinkModule.thinking()
       });
     }
@@ -53,7 +54,22 @@ var commands = [
         //musicModule.skip(message, params, client);
       }*/
     }
+  },
 
+  {
+    command: "puppy",
+    description: "Calls on random-puppy API and returns an imgur link to a random picture from reddit.com/r/puppies",
+    execute: function(message, params) {
+      redditPicModule.puppy(message);
+    }
+  },
+
+  {
+    command: "cat",
+    description: "Random cat picture grabbed from reddit.com/r/catpictures using random-puppy API",
+    execute: function(message, params) {
+      redditPicModule.cat(message);
+    }
   }
 ];
 

@@ -158,6 +158,7 @@ var thinkingUrls = [
 module.exports = {
     thinking: function() {
     var think = thinkingUrls[Math.floor(Math.random() * thinkingUrls.length)]
+    console.log("Thinking called: " + think.url);
     return think.url
   }
 }
