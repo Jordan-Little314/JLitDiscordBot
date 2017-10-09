@@ -75,63 +75,7 @@ client.on('ready', () => {
                 handleCommand(message, message.content.substring(1));
             }
           }
-
       }
-
-//Listens to each instance of the message /knock and executes the code below
-/*
-        if (message.content.startsWith('/knock')) {
-            const msg = message.content.split(' ');
-
-//Function knock() returns the formatted joke
-                message.reply(jokeModule.knock());
-
-        }
-        else if (message.content.startsWith('/thinking')) {
-          const msg = message.content.split(' ');
-          message.channel.sendMessage("", {
-            file: thinkModule.thinking()
-          });
-        }
-
-        else if (message.content.startsWith('/help')) {
-          const msg = message.content.split(' ');
-          message.channel.sendMessage(helpModule.help())
-        }
-
-        else if (message.content.startsWith('/music')) {
-          const msg = message.content.split(' ');
-          var stream = ""
-          var flag = false
-          if (msg.length < 2) {
-            message.reply("Please specify what you want to do.\nUse /music <play/stop/skip>\nOr /music <q> <URL>")
-          }
-          if (msg.length == 2) {
-
-          }
-          else {
-            try {
-              stream = ytdl(msg[1], {filter : 'audioonly'});
-              flag = true;
-            }
-            catch(err){
-              message.reply("Need a valid address")
-            };
-          }
-
-          if (message.member.voiceChannel && flag) {
-            message.member.voiceChannel.join()
-              .then(connection => { // Connection is an instance of VoiceConnection
-                message.reply('I have successfully connected to the channel!');
-                connection.playStream(stream, { seek : 0, volume : 0.5});
-              })
-              .catch(console.log);
-          } else if (!message.member.voiceChannel && flag){
-            message.reply('You need to join a voice channel first!');
-          }
-        }
-        */
-
     });
 
 function handleCommand(message, text) {
