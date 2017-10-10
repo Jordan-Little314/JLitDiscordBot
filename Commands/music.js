@@ -31,7 +31,7 @@ module.exports = {
       }
 
       if (params.length < 3) {
-        message.channel.sendMessage("Please put song URL to queue using `-music q <URL>`.");
+        message.channel.send("Please put song URL to queue using `-music q <URL>`.");
         return;
       }
 
@@ -41,7 +41,7 @@ module.exports = {
 
     if (match && match[2]) {
       //queuePlaylist(match[2], message, client);
-      message.channel.sendMessage("Playlists are not currently supported, please queue individual songs!");
+      message.channel.send("Playlists are not currently supported, please queue individual songs!");
     } else {
       addToQueue(params[2], message, false, client);
     }
@@ -124,7 +124,7 @@ function addToQueue(video, message, mute=false, client) {
 
 function playNextSong(message, client) {
     if (isQueueEmpty()) {
-      message.channel.sendMessage("The queue is empty!");
+      message.channel.send("The queue is empty!");
     }
 
     var videoID = queue[0]["id"];
@@ -134,7 +134,7 @@ function playNextSong(message, client) {
     nowPlayingData["title"] = title;
     nowPlayingData["user"] = user;
 
-    messageHandler.channel.sendMessage('Now playing: "' + title + '" (requested by ' + user + ')');
+    messageHandler.channel.send('Now playing: "' + title + '" (requested by ' + user + ')');
     clientHandler.user.setGame(title);
 
     var audioStream = ytdl("https://www.youtube.com/watch?v=" + videoID);

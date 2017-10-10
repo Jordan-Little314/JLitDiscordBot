@@ -3,6 +3,7 @@ const jokeModule = require('./Commands/joke');
 const helpModule = require('./Commands/help');
 const musicModule = require('./Commands/music');
 const redditPicModule = require('./Commands/redditPictures');
+const miscModule = require('./Commands/misc');
 
 
 const Discord = require('discord.js');
@@ -69,6 +70,14 @@ var commands = [
     description: "Random cat picture grabbed from reddit.com/r/catpictures using random-puppy API",
     execute: function(message, params) {
       redditPicModule.cat(message);
+    }
+  },
+
+  {
+    command: "fuck",
+    description: "plays a mp3 sound file of someone saying 'fuck'",
+    execute: function(message, params) {
+      miscModule.fuck(message);
     }
   }
 ];

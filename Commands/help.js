@@ -12,4 +12,5 @@ var helpText = "```Welcome to the Lit Bot! \n" +
                "-music <play/stop>: plays/stops song in queue\n" +
                "-cat: random cat picture, taken from /r/catpictures" +
                "-puppy: random puppy picture, taken from /r/puppies" +
+               "-fuck: for when you need to yell but can't" +
                "```"
