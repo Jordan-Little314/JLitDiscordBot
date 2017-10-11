@@ -92,7 +92,7 @@ client.on('ready', () => {
       if (message.channel.type == "dm" && message.author.id != client.user.id) { // If the message sent was a DM and not by the Bot,
         // to prevent infinite looping
           message.channel.sendMessage("Please use -help in a public chat room to see a list of commands!");
-      } else if (message.channel.type == "text") { // Message recieved on text channel
+      } else if (message.channel.type == "text") {
           if (message.isMentioned(client.user)) {
             message.reply("Hey there! Use -help for a list of commands!");
           } else {

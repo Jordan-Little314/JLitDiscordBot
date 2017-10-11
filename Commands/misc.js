@@ -1,3 +1,4 @@
+// Not what you think
 var fuckSounds = [
   { path: "./Files/Fuck.mp3" },
   { path: "./Files/Fuck2.mp3" },
