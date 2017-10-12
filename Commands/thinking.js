@@ -1,11 +1,9 @@
 var thinkingUrls = [
     { url: 'https://i.imgur.com/xXtBhav.png' },
     { url: 'http://i.imgur.com/6YToyEF.png' },
-    { url: 'https://i.redd.it/zy1avh8r7a1z.gif' },
     { url: 'https://i.redd.it/quw8cs83lk0z.png' },
     { url: 'https://i.redd.it/4ckrcgcp4qzy.png' },
     { url: 'https://i.redd.it/q28qdrru3czy.png' },
-    { url: 'https://i.imgur.com/lniyGuH.gifv' },
     { url: 'https://i.imgur.com/W6elx0Q.png' },
     { url: 'http://i.imgur.com/xlPKO9s.png' },
     { url: 'http://i.imgur.com/KOdb5jY.png' },

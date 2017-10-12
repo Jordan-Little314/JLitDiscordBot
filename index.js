@@ -86,7 +86,15 @@ var commands = [
     command: "casino",
     description: "Casino which users can bet Lit Bux on",
     execute: function(message, params) {
+      message.channel.send("Not yet implemented");
+    }
+  },
 
+  {
+    command: "jakarus",
+    description: "Freja attacks",
+    execute: function(message, params) {
+      miscModule.jakarus(message, params);
     }
   }
 ];
