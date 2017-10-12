@@ -4,6 +4,7 @@ const helpModule = require('./Commands/help');
 const musicModule = require('./Commands/music');
 const redditPicModule = require('./Commands/redditPictures');
 const miscModule = require('./Commands/misc');
+const casinoModule = require('./Commands/casino');
 
 
 const Discord = require('discord.js');
@@ -78,6 +79,14 @@ var commands = [
     description: "plays a mp3 sound file of someone saying 'fuck'",
     execute: function(message, params) {
       miscModule.fuck(message);
+    }
+  },
+
+  {
+    command: "casino",
+    description: "Casino which users can bet Lit Bux on",
+    execute: function(message, params) {
+
     }
   }
 ];
