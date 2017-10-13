@@ -48,9 +48,9 @@ var commands = [
       if (params[1] == "q" || params[1] == "que" || params[1] == "queue") {
           musicModule.queue(message, params, client, ytApiKey);
           //musicModule.queue(message, params, client);
-      } else if (params[1] == "stop") {
+      } else if (params[1] == "stop" || params[1] == "s") {
         musicModule.stop(message, params);
-      } else if (params[1] == "play") {
+      } else if (params[1] == "play" || params[1] == "p") {
         musicModule.play(message, params, client);
       } /*else if (params[1] == "skip") {
         //musicModule.skip(message, params, client);
@@ -71,6 +71,22 @@ var commands = [
     description: "Random cat picture grabbed from reddit.com/r/catpictures using random-puppy API",
     execute: function(message, params) {
       redditPicModule.cat(message);
+    }
+  },
+
+  {
+    command: "donald",
+    description: "Random donald pic",
+    execute: function(message, params) {
+      redditPicModule.donald(message);
+    }
+  },
+
+  {
+    command: "anime",
+    description: "Random anime pic",
+    execute: function(message, parmas) {
+      redditPicModule.anime(message);
     }
   },
 
