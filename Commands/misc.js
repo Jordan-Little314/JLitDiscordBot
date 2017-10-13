@@ -8,127 +8,127 @@ var fuckSounds = [
 var discordPeople = [
   {
     name: "jeff",
-    emoji: ":JChurch:"
+    emoji: "<:JChurch:245026382101479436>"
   },
 
   {
     name: "bryan",
-    emoji: ":BChurch:"
+    emoji: "<:BChurch:245028264492531712>"
   },
 
   {
     name: "jake",
-    emoji: ":SlickDickJake:"
+    emoji: "<:SlickDickJake:245029849121554432>"
   },
 
   {
     name: "jordan",
-    emoji: ":JLit:"
+    emoji: "<:JLit:245030581866463233>"
   },
 
   {
     name: "brendan",
-    emoji: ":CoolBrendan:"
+    emoji: "<:CoolBrendan:245084112929423360>"
   },
 
   {
     name: "sesh",
-    emoji: ":sessions:"
+    emoji: "<:sessions:245280851833782272>"
   },
 
   {
     name: "owen",
-    emoji: ":Owen:"
+    emoji: "<:Owen:245428859665776641>"
   },
 
   {
     name: "tyler",
-    emoji: ":tyler:"
+    emoji: "<:tyler:245597314192900096>"
   },
 
   {
     name: "cole",
-    emoji: ":cole:"
+    emoji: "<:cole:247604223649251329>"
   },
 
   {
     name: "max",
-    emoji: ":max:"
+    emoji: "<:max:247605417415278602>"
   },
 
   {
     name: "beeku",
-    emoji: ":beeku:"
+    emoji: "<:beeku:247605690980368384>"
   },
 
   {
     name: "logan",
-    emoji: ":logan:"
+    emoji: "<:logan:247605923881680896>"
   },
 
   {
     name: "tayne",
-    emoji: ":tayne:"
+    emoji: "<:tayne:247606316267208704>"
   },
 
   {
     name: "zito",
-    emoji: ":zito:"
+    emoji: "<:zito:247606438896074752>"
   },
 
   {
     name: "richard",
-    emoji: ":richard:"
+    emoji: "<:richard:247609240716312576>"
   },
 
   {
     name: "diego",
-    emoji: ":Diego:"
+    emoji: "<:Diego:249065499764326400>"
   },
 
   {
     name: "nano",
-    emoji: ":skele:"
+    emoji: "<:skele:310216548210049034>"
   },
 
   {
     name: "grace",
-    emoji: ":grace:"
+    emoji: "<:grace:319254275043885068>"
   },
 
   {
     name: "miguel",
-    emoji: ":miguel:"
+    emoji: "<:miguel:320028190619992074>"
   },
 
   {
     name: "hannah",
-    emoji: ":hannah:"
+    emoji: "<:hannah:320066982672334848>"
   },
 
   {
     name: "son",
-    emoji: ":son:"
+    emoji: "<:son:320371173181620224>"
   },
 
   {
     name: "emil",
-    emoji: ":emil:"
+    emoji: "<:emil:320371205674762241>"
   },
 
   {
     name: "ryan",
-    emoji: ":ryan:"
+    emoji: "<:ryan:322176790070296576>"
   },
 
   {
     name: "lena",
-    emoji: ":lena:"
+    emoji: "<:lena:347922138096992267>"
   },
 
   {
     name: "kayla",
-    emoji: ":kayla:"
+    emoji: "<:kayla:360623357210656769>"
   }
 ]
 
@@ -150,11 +150,11 @@ module.exports = {
   jakarus: function(message, params) {
     console.log("jakarus called")
     if (params.length < 2) {
-      message.channel.send(":freja:");
+      message.channel.send("<:freja:291712863700254742>");
     } else {
       var person = searchEmoji(params[1]); // Find the emoji of the passed person
       if (person != undefined) {
-        message.channel.send(person.emoji + "           :freja: \n" +
+        message.channel.send(person.emoji + "           <:freja:291712863700254742> \n" +
                              " \\\\|/     :gun: \\\\|/ \n" +
                              "   |                  | \n" +
                              " /\\               /\\");
