@@ -12,6 +12,9 @@ var helpText = "```Welcome to the Lit Bot! \n" +
                "-music <play/stop>: plays/stops song in queue\n" +
                "-cat: random cat picture, taken from /r/catpictures\n" +
                "-puppy: random puppy picture, taken from /r/puppies\n" +
+               "-donald: random /r/donald pic\n" +
+               "-lewd: random /r/lewd pic\n" +
+               "-cougs: go cougs (random /r/wsu pic)\n" +
                "-fuck: for when you need to yell but can't\n" +
-               "-jakarus <name>: Freja attacks\n" +
+               "-dracarys <name>: Freja attacks\n" +
                "```"

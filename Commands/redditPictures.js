@@ -34,14 +34,26 @@ const randomPuppy = require('random-puppy');
         })
     },
 
-    anime: function(message) {
-      randomPuppy('anime')
+    lewd: function(message) {
+      randomPuppy('lewd')
         .then(url => {
           var output = "https://i." + url.slice(7);
-          console.log("Anime called: " + output);
+          console.log("Lewd called: " + output);
           message.channel.send("", {
             file: output
           });
         })
-    }
+    },
+
+      cougs: function(message) {
+        randomPuppy('wsu')
+          .then(url => {
+            var output = "https://i." + url.slice(7);
+            console.log("Cougs called: " + output);
+            message.channel.send("", {
+              file: output
+            });
+          })
+      }
+
   }

@@ -83,10 +83,18 @@ var commands = [
   },
 
   {
-    command: "anime",
-    description: "Random anime pic",
+    command: "lewd",
+    description: "Random lewd pic",
     execute: function(message, parmas) {
-      redditPicModule.anime(message);
+      redditPicModule.lewd(message);
+    }
+  },
+
+  {
+    command: "cougs",
+    description: "Random pic from /r/wsu",
+    execute: function(message, params) {
+      redditPicModule.cougs(message);
     }
   },
 
@@ -107,10 +115,14 @@ var commands = [
   },
 
   {
-    command: "jakarus",
+    command: "dracarys",
     description: "Freja attacks",
     execute: function(message, params) {
-      miscModule.jakarus(message, params);
+      //if (Discord.id == 193139492528455680) {
+        miscModule.dracarys(message, params);
+      //} else {
+      //  message.channel.send("This command is only supported in the Church channel");
+      //}
     }
   }
 ];

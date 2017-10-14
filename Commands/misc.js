@@ -144,11 +144,13 @@ module.exports = {
           connection.playFile(fuck.path);
         }
       });
+    } else {
+      message.channel.send("Get in an audio channel dumbass");
     }
   },
 
-  jakarus: function(message, params) {
-    console.log("jakarus called")
+  dracarys: function(message, params) {
+    console.log("dracarys called")
     if (params.length < 2) {
       message.channel.send("<:freja:291712863700254742>");
     } else {
