@@ -165,6 +165,22 @@ module.exports = {
         message.channel.send("Who the fuck is " + params[1] + "?");
       }
     }
+  },
+
+  clean: function(message) {
+    message.channel.fetchMessages({limit: 100})
+      .then(messages => { //message.channel.bulkDelete(messages)
+
+        var msgs = messages.array()
+        for (var i = 0; i < msgs.length; i++) {
+          if (msgs[i].author == '<@365404210013143040>') {
+            msgs[i].delete()
+          }
+        }
+      })
+      .catch(console.error);
+
+    message.channel.send(":ok_hand:");
   }
 }
 

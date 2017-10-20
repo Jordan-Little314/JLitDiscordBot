@@ -156,6 +156,26 @@ var commands = [
       //  message.channel.send("This command is only supported in the Church channel");
       //}
     }
+  },
+
+  {
+    command: "reddit",
+    description: "pulls pictures from the subreddit given via params",
+    execute: function(message, params) {
+      if (params.length < 2) {
+        message.channel.send("Please input a subreddit you would like to grab pictures from");
+      } else {
+        redditPicModule.subreddit(message, params[1], params[1]);
+      }
+    }
+  },
+
+  {
+    command: "clean",
+    description: "Clears the text channel of the bots last 100 posts",
+    execute: function(message, params) {
+      miscModule.clean(message);
+    }
   }
 ];
 
