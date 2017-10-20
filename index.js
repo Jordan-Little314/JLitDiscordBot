@@ -62,7 +62,7 @@ var commands = [
     command: "puppy",
     description: "Calls on random-puppy API and returns an imgur link to a random picture from reddit.com/r/puppies",
     execute: function(message, params) {
-      redditPicModule.puppy(message);
+      redditPicModule.subreddit(message, 'puppies', 'Puppy');
     }
   },
 
@@ -70,7 +70,7 @@ var commands = [
     command: "cat",
     description: "Random cat picture grabbed from reddit.com/r/catpictures using random-puppy API",
     execute: function(message, params) {
-      redditPicModule.cat(message);
+      redditPicModule.subreddit(message, 'catpictures', 'Cat');
     }
   },
 
@@ -78,7 +78,7 @@ var commands = [
     command: "donald",
     description: "Random donald pic",
     execute: function(message, params) {
-      redditPicModule.donald(message);
+      redditPicModule.subreddit(message, 'the_donald', 'Donald');
     }
   },
 
@@ -86,7 +86,7 @@ var commands = [
     command: "lewd",
     description: "Random lewd pic",
     execute: function(message, parmas) {
-      redditPicModule.lewd(message);
+      redditPicModule.subreddit(message, 'lewd', 'Lewd');
     }
   },
 
@@ -94,7 +94,39 @@ var commands = [
     command: "cougs",
     description: "Random pic from /r/wsu",
     execute: function(message, params) {
-      redditPicModule.cougs(message);
+      redditPicModule.subreddit(message, 'wsu', 'Cougs');
+    }
+  },
+
+  {
+    command: "anime",
+    description: "Random pic from /r/anime",
+    execute: function(message, params) {
+      redditPicModule.subreddit(message, 'anime', 'Anime');
+    }
+  },
+
+  {
+    command: "hentai",
+    description: "Random pic from /r/hentai... For Cole",
+    execute: function(message, params) {
+      redditPicModule.subreddit(message, 'hentai', 'Hentai');
+    }
+  },
+
+  {
+    command: "elephant",
+    description: "Random pic from /r/babyelephantgifs",
+    execute: function(message, params) {
+      redditPicModule.elephant(message);
+    }
+  },
+
+  {
+    command: "ecchi",
+    description: "Random pic from /r/ecchi... For Bryan",
+    execute: function(message, params) {
+      redditPicModule.subreddit(message, 'ecchi', 'Ecchi');
     }
   },
 
