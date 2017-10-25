@@ -6,9 +6,13 @@ const randomPuppy = require('random-puppy');
         .then(url => {
           var output = "https://i." + url.slice(7);
           console.log(cmd + " called: " + output);
-          message.channel.send("", {
-            file: output
-          });
+          if (output.includes("gif")) {
+            message.channel.send(output);
+          } else {
+            message.channel.send("", {
+              file: output
+            });
+          }
         })
     },
 
